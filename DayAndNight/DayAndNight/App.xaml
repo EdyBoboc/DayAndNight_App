@@ -3,5 +3,64 @@
     x:Class="DayAndNight.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Application.Resources />
+    <Application.Resources>
+
+        <!-- Colors -->
+        <Color x:Key="HeaderColor">#213655</Color>
+        <Color x:Key="TagColor">#ffa418</Color>
+        <Color x:Key="ArrowColor">#768ea3</Color>
+        <Color x:Key="BorderColor">#d2d7dd</Color>
+
+        <!-- Fonts implementation-->
+        <OnPlatform x:Key="TextBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Poppins" />
+            <On Platform="Android" Value="Poppins-Bold.ttf#Poppins" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="TextLight" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Poppins Light" />
+            <On Platform="Android" Value="Poppins-Light.ttf#Poppins Light" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="TextSemiBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Poppins SemiBold" />
+            <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins SemiBold" />
+        </OnPlatform>
+
+        <!-- Styles -->
+        <Style x:Key="Header" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextBold}"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="TextColor" Value="#213654"/>
+        </Style>
+        
+        <Style x:Key="SubText" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextLight}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="TextColor" Value="#95a8b6"/>
+        </Style>
+
+        <Style x:Key="SubTextSemiBold" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextSemiBold}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextColor" Value="#95a8b6"/>
+        </Style>
+        
+        <Style x:Key="SubHeader" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextBold}"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="TextColor" Value="#213654"/>
+        </Style>
+
+        <!-- Implicit Styles -->
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="0"/>
+            <Setter Property="ColumnSpacing" Value="0"/>
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+    </Application.Resources>
 </Application>

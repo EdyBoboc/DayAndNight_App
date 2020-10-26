@@ -68,6 +68,10 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\Poppins-Light.ttf" />
+    <BundleResource Include="Resources\Poppins-Bold.ttf" />
+    <BundleResource Include="Resources\Poppins-Regular.ttf" />
+    <BundleResource Include="Resources\Poppins-SemiBold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -126,8 +130,14 @@
     <PackageReference Include="LiveXAML">
       <Version>2.1.73</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>2.3.0.759</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -135,5 +145,77 @@
       <Project>{C16FE508-5133-47B4-BDCD-A8FA3E9E3496}</Project>
       <Name>DayAndNight</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fotografia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fotografia%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fotografia%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fulger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fulger%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fulger%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fundal gradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fundal gradient%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fundal gradient%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Guage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Guage%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Guage%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sageata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sageata%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sageata%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 1%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 2%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 3%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zona 3%403x.png" />
   </ItemGroup>
 </Project>

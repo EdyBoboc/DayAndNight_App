@@ -2,44 +2,88 @@
 <ContentPage
     x:Class="DayAndNight.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
-    <StackLayout>
-        <Frame
-            Margin="0,0,0,0"
-            Padding="100"
-            BackgroundColor="#1E063E">
-            <Label
-                FontSize="36"
-                HorizontalTextAlignment="Center"
-                Text="Welcome to Xamarin.Forms!!!"
-                TextColor="#7BFCFF" />
-        </Frame>
-        <Label
-            Padding="30,10,30,10"
-            FontSize="Title"
-            Text="Start developing now" />
-        <Label
-            Padding="30,0,30,0"
-            FontSize="16"
-            Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" />
-        <Label Padding="30,24,30,0" FontSize="16" ClassId="lblMare">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at " />
-                        <Span FontAttributes="Bold" Text="https://aka.ms/xamarin-quickstart" x:Name="lblLink" />
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Button
-            x:Name="btnClick"
-            Text="Huhu"
-            Margin="30, 0, 30, 0"
-            BackgroundColor="Aquamarine"
-            TextColor="DarkBlue"
-            />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image Aspect="AspectFill" Source="Fundal_gradient" />
+
+        <StackLayout Padding="20,30,20,0">
+
+            <!--  Header section  -->
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout>
+                    <Label Style="{StaticResource Header}" Text="Tabloul de bord" />
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Style="{StaticResource SubText}" Text="Bine ai revenit, " />
+                                <Span Style="{StaticResource SubTextSemiBold}" Text="David" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <circleImage:CircleImage
+                    Grid.Column="1"
+                    Margin="0,0,0,0"
+                    HeightRequest="50"
+                    Source="Fotografia"
+                    WidthRequest="50" />
+            </Grid>
+
+            <!--  Notification section  -->
+            <Frame 
+                Margin="0, 20, 0, 0"
+                Padding="15"
+                BackgroundColor="Transparent" 
+                BorderColor="{StaticResource BorderColor}"
+                HasShadow="False"
+                CornerRadius="30">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Source="Fulger"
+                        VerticalOptions="Center" 
+                        Margin="10, 0, 0, 0"/>
+                    <Label
+                        Grid.Column="1" 
+                        Margin="20, 0, 0, 0"
+                        Style="{StaticResource SubTextSemiBold}"
+                        Text="2 notificări necitite" 
+                        VerticalOptions="Center"/>
+                    <Image
+                        Grid.Column="2"
+                        HorizontalOptions="Center"
+                        Source="Sageata"
+                        VerticalOptions="Center" 
+                        Margin="0, 0, 10, 0"/>
+
+                </Grid>
+
+
+            </Frame>
+        </StackLayout>
+
+    </Grid>
 
 </ContentPage>
