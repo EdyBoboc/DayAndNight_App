@@ -19,6 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>C:\Microsoft\Xamarin\NuGet\xamarin.essentials\1.5.3.2\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="PageMiauView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
