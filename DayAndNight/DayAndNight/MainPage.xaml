@@ -40,7 +40,11 @@
                     Margin="0,0,0,0"
                     HeightRequest="50"
                     Source="Fotografia"
-                    WidthRequest="50" />
+                    WidthRequest="50">
+                    <circleImage:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </circleImage:CircleImage.GestureRecognizers>
+                </circleImage:CircleImage>
             </Grid>
 
             <!--  Notification section  -->
@@ -94,7 +98,7 @@
                     <StackLayout Margin="20, 10, 0, 0">
                         <Label
                             Style="{StaticResource TemperatureLabel}"
-                            Text="22°" />
+                            Text="-2°" />
                         <Label
                             Margin="0, -20, 0, 0"
                             Style="{StaticResource SubTextSemiBold}"
@@ -113,11 +117,12 @@
             <Label
                 Margin="0,20,0,0"
                 Style="{StaticResource SubHeader}"
-                Text="Securitate" />
+                Text="Camere"
+                x:Name="lblCamere"/>
 
             <ScrollView Orientation="Horizontal">
                 <StackLayout Orientation="Horizontal" Spacing="15" x:Name="carusel">
-                    <!--<pancake:PancakeView CornerRadius="20" x:Name="prajitura">-->
+                    <!--<pancake:PancakeView CornerRadius="20">-->
                         
                         <!--<Grid
                         BackgroundColor="Indigo"
