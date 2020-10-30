@@ -11,7 +11,10 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Image Aspect="AspectFill" Source="Fundal_gradient" />
+        <Image
+            Grid.RowSpan="2"
+            Aspect="AspectFill"
+            Source="Fundal_gradient" />
 
         <StackLayout Padding="20,30,20,0">
 
@@ -42,7 +45,7 @@
                     Source="Fotografia"
                     WidthRequest="50">
                     <circleImage:CircleImage.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                     </circleImage:CircleImage.GestureRecognizers>
                 </circleImage:CircleImage>
             </Grid>
@@ -95,39 +98,45 @@
             <pancake:PancakeView CornerRadius="10">
                 <Grid>
                     <Image Aspect="AspectFill" Source="Guage" />
-                    <StackLayout Margin="20, 10, 0, 0">
+                    <StackLayout Margin="20,10,0,0">
+                        <Label Style="{StaticResource TemperatureLabel}" Text="-2°" />
                         <Label
-                            Style="{StaticResource TemperatureLabel}"
-                            Text="-2°" />
-                        <Label
-                            Margin="0, -20, 0, 0"
+                            Margin="0,-20,0,0"
                             Style="{StaticResource SubTextSemiBold}"
-                            TextColor="White"
-                            Text="CELSIUS" />
-                    </StackLayout>
-                    <Label  Style="{StaticResource SubTextSemiBold}"
-                            Text="∘∘∘"
-                            HorizontalOptions="End"
-                            Margin="0, 10, 20, 0"
+                            Text="CELSIUS"
                             TextColor="White" />
+                    </StackLayout>
+                    <Label
+                        Margin="0,10,20,0"
+                        HorizontalOptions="End"
+                        Style="{StaticResource SubTextSemiBold}"
+                        Text="∘∘∘"
+                        TextColor="White" />
                 </Grid>
             </pancake:PancakeView>
 
             <!--  Security rooms  -->
             <Label
+                x:Name="lblListaDispozitive"
                 Margin="0,20,0,0"
                 Style="{StaticResource SubHeader}"
-                Text="Camere"
-                x:Name="lblCamere"/>
+                Text="Dispozitive">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AdaugareDispozitiv" />
+                </Label.GestureRecognizers>
+            </Label>
 
             <ScrollView Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal" Spacing="15" x:Name="carusel">
-                    <!--<pancake:PancakeView CornerRadius="20">-->
-                        
-                        <!--<Grid
-                        BackgroundColor="Indigo"
+                <StackLayout
+                    x:Name="carusel"
+                    Orientation="Horizontal"
+                    Spacing="15">
+                    <!--<pancake:PancakeView CornerRadius="10">-->
+
+                    <!--<Grid
+                        BackgroundColor="Aqua"
                         HeightRequest="100"
-                        WidthRequest="170"/>
+                        WidthRequest="140"/>
                     <Grid
                         BackgroundColor="Indigo"
                         HeightRequest="100"
@@ -148,6 +157,101 @@
                 </StackLayout>
             </ScrollView>
         </StackLayout>
+
+        <StackLayout Grid.Row="1" Margin="20,20,20,40">
+            <!--  Bottom section  -->
+            <Label
+                x:Name="lblListaCamere"
+                Margin="0,20,0,0"
+                Style="{StaticResource SubHeader}"
+                Text="Camere">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AdaugareCamera" />
+                </Label.GestureRecognizers>
+            </Label>
+            <ScrollView Orientation="Horizontal">
+                <!--  Creare dreptunghi pentru a adauga camerele  -->
+                <StackLayout
+                    x:Name="chenarCamere"
+                    HeightRequest="55"
+                    Orientation="Horizontal"
+                    Spacing="20">
+                    <!--  Creare dreptunghi/sectiune pentru camera  -->
+                    <!--  Camera 1  -->
+                    <!--<StackLayout Orientation="Vertical">
+                    <BoxView
+                        BackgroundColor="White"
+                        HeightRequest="2"
+                        WidthRequest="130" />
+                    <Label
+                        Margin="10,0,0,0"
+                        Style="{StaticResource TabHeader}"
+                        Text="Sufragerie" />
+                    <Label
+                        Margin="10,-10,0,0"
+                        Style="{StaticResource SubText}"
+                        Text="5 dispozitive"
+                        TextColor="White" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Vertical">
+                    <BoxView
+                        BackgroundColor="{StaticResource TabSubTextColor}"
+                        HeightRequest="2"
+                        WidthRequest="130" />
+                    <Label
+                        Margin="10,0,0,0"
+                        Style="{StaticResource TabHeader}"
+                        Text="Dormitor"
+                        TextColor="{StaticResource TabSubTextColor}" />
+                    <Label
+                        Margin="10,-10,0,0"
+                        Style="{StaticResource TabSubText}"
+                        Text="2 dispozitive"
+                        TextColor="{StaticResource TabSubTextColor}" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Vertical">
+                    <BoxView
+                        BackgroundColor="{StaticResource TabSubTextColor}"
+                        HeightRequest="2"
+                        WidthRequest="130" />
+                    <Label
+                        Margin="10,0,0,0"
+                        Style="{StaticResource TabHeader}"
+                        Text="Baie"
+                        TextColor="{StaticResource TabSubTextColor}" />
+                    <Label
+                        Margin="10,-10,0,0"
+                        Style="{StaticResource TabSubText}"
+                        Text="1 dispozitiv"
+                        TextColor="{StaticResource TabSubTextColor}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <BoxView
+                        BackgroundColor="{StaticResource TabSubTextColor}"
+                        HeightRequest="2"
+                        WidthRequest="130" />
+                    <Label
+                        Margin="10,0,0,0"
+                        Style="{StaticResource TabHeader}"
+                        Text="Camera David"
+                        TextColor="{StaticResource TabSubTextColor}" />
+                    <Label
+                        Margin="10,-10,0,0"
+                        Style="{StaticResource TabSubText}"
+                        Text="3 dispozitive"
+                        TextColor="{StaticResource TabSubTextColor}" />
+                </StackLayout>-->
+
+                </StackLayout>
+
+            </ScrollView>
+        </StackLayout>
+
     </Grid>
 
 </ContentPage>

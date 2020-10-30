@@ -7,9 +7,11 @@
 
         <!--  Colors  -->
         <Color x:Key="HeaderColor">#213655</Color>
-        <Color x:Key="TagColor">#ffa418</Color>
         <Color x:Key="ArrowColor">#768ea3</Color>
         <Color x:Key="BorderColor">#d2d7dd</Color>
+        <Color x:Key="TagColor">#ffa418</Color>
+        <Color x:Key="TabSubTextColor">#96a7dd</Color>
+
 
         <!--  Fonts implementation  -->
         <OnPlatform x:Key="TextBold" x:TypeArguments="x:String">
@@ -64,6 +66,20 @@
             <Setter Property="FontSize" Value="12" />
             <Setter Property="TextColor" Value="#ffffff" />
         </Style>
+
+        <Style x:Key="TabHeader" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextSemiBold}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="#ffffff" />
+        </Style>
+
+        <Style x:Key="TabSubText" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextLight}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="{StaticResource TabSubTextColor}" />
+        </Style>
+
+
 
         <!--  Implicit Styles  -->
         <Style TargetType="Grid">
